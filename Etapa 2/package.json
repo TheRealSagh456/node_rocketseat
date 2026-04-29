@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node --no-warnings --env-file=.env --import tsx src/server.ts",
     "knex": "node --no-warnings --import tsx ./node_modules/knex/bin/cli.js",
-    "lint": "eslint src --ext .ts"
+    "lint": "eslint src --ext .ts",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",
@@ -15,9 +16,12 @@
   "devDependencies": {
     "@rocketseat/eslint-config": "^3.0.12",
     "@types/node": "^25.6.0",
+    "@types/supertest": "^7.2.0",
     "eslint": "^10.2.1",
+    "supertest": "^7.2.2",
     "tsx": "^4.21.0",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.5"
   },
   "dependencies": {
     "@fastify/cookie": "^11.0.2",

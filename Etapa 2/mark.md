@@ -8,7 +8,7 @@
 # Requisitos de negócios
 
 [x] Transações podem ser do tipo crédito (soma ao valor total) ou débito (subtrai do valor total);
-[ ] Deve ser possível identificar o usuário entre as requisições;
-[ ] O usuário só pode ver as transição criadas por
+[x] Deve ser possível identificar o usuário entre as requisições;
+[x] O usuário só pode ver as transição criadas por ele
 
 # Requisitos não-funcionais

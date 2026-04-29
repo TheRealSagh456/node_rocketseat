@@ -6,13 +6,15 @@ import { error } from "node:console"
 import { check } from "../middleware/check-session-id.js"
 
 //testes
-// unitários: testa uma unidade da aplicação (uma função por exemplo)
-// integração: comunicação entre 2 ou + unidades (reação em cadeia)
-// e2e - end to end - ponta a ponta: simula um usuario operando a aplicação
+// unitários: testa uma unidade da aplicação (uma função por exemplo)           (MUITOS)
+// integração: comunicação entre 2 ou + unidades (reação em cadeia)             (ALGUNS)
+// e2e - end to end - ponta a ponta: simula um usuario operando a aplicação     (POUCOS)
 //  |
 //  L Front-end: abrir a pagina de login, digitar texto x no campo x, clicar em botão
 //  |
 //  L Back-end: chamadas HTTP, websockets (camadas que se comunicam com o front no geral)
+
+// Pirâmide de testes: E2E (pois são independentes)
 
 
 export async function transactionsRoutes(app: FastifyInstance) {
