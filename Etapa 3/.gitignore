@@ -1,3 +1,5 @@
 node_modules
 build
-db/data.db
+src/db/data.db
+src/http/controllers/list.ts
+coverage
