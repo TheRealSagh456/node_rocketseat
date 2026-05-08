@@ -26,7 +26,6 @@ describe('Get User Profile Use Case',async () => {
             userId: createdUser.id
         })
 
-        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", user.name)
         await expect(user.name).toEqual("fulano")
         
     })

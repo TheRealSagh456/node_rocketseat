@@ -1,7 +1,7 @@
 import { hash } from "bcryptjs"
 import { prisma } from "../lib/prisma.js"
 import type { UsersRepository } from "../repositories/users-repository.js"
-import { UserAlreadyExistsError } from "./errors/user-already-exists.js"
+import { UserAlreadyExistsError } from "./errors/user-already-exists-error.js"
 import type { User } from "@prisma/client"
 
 interface RegisterUseCaseRequest {
