@@ -3,12 +3,15 @@ import { register } from "./register.js";
 import { authenticate } from "./authenticate.js";
 import { profile } from "./profile.js";
 import { verifyJWT } from "../../middlewares/verify-jwt.js";
+import { refresh } from "./refresh.js";
 // import { list } from "./controllers/list.js";
 
-export async function appRoutes(app:FastifyInstance) {
+export async function usersRoutes(app:FastifyInstance) {
     app.post('/users', register)
 
     app.post('/sessions', authenticate)
+
+    app.patch('/token/refresh', refresh)
 
 /*Autenticado*/ 
 

@@ -1,9 +1,6 @@
 import z from "zod"
 import type { FastifyRequest, FastifyReply } from "fastify"
-import { makeCreateGymUseCase } from "../../../use-cases/factories/make-create-gym-use-case.js"
-import { CheckInUseCase } from "../../../use-cases/check-in.js"
-import { makeCheckInUseCase } from "../../../use-cases/factories/make-check-in-use-case.js"
-import { ValidateCheckInUseCase } from "../../../use-cases/validate-check-in.js"
+import { makeValidateCheckInUseCase } from "../../../use-cases/factories/make-validate-check-in-use-case.js"
 
 export async function validate(request: FastifyRequest, reply: FastifyReply) {
 
@@ -15,14 +12,11 @@ export async function validate(request: FastifyRequest, reply: FastifyReply) {
 
     const {checkInId} = validateCheckInParamsSchema.parse(request.params)
 
-        const validateCheckInUseCase = ValidateCheckInUseCase()
+        const validateCheckInUseCase = makeValidateCheckInUseCase()
         
-        await checkInUseCase.execute({
-            gymId,
-            userId: request.user.sub,
-            userLatitude: latitude,
-            userLongitude: longitude
+        await validateCheckInUseCase.execute({
+            checkInId,
         })
 
-    return reply.status(200).send()
+    return reply.status(204).send()
 }

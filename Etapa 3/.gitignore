@@ -4,3 +4,6 @@ src/db/data.db
 src/http/controllers/list.ts
 coverage
 .vscode
+dist
+.prisma
+.env
