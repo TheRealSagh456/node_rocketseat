@@ -1,37 +1,74 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "sqlite"
+  url = env("DATABASE_URL")
+}
+
+model Requirement {
+  id     String @id @default(uuid())
+  text   String
+  pet_id String
+  pet    Pet    @relation(fields: [pet_id], references: [id])
 }
 
 model Org {
-  id String @id
-  name String
-  email String @unique
+  id            String   @id @default(uuid())
+  name          String
+  email         String   @unique
   password_hash String
-  phone String
-  city String
-  address String
-  created_at DateTime
-  Updated_at DateTime
+  phone         String
+  city          String
+  address       String
+  created_at    DateTime @default(now())
+  updated_at    DateTime @updatedAt
+  pets          Pet[]
 }
 
 model Pet {
-  id String @id @default(uuid())
-  from String
-  name String
-  about String
-  energy String
-  ambient String
-  port String
-  city String
-  requirements String
+  id           String            @id @default(uuid())
+  org_id       String
+  name         String            @unique
+  age          Age
+  about        String
+  energy       Energy
+  independency IndependencyLevel
+  ambient      AmbientSpace
+  size         Petsize
+  org          Org               @relation(fields: [org_id], references: [id])
+  requirements Requirement[]
+}
 
+enum Petsize {
+  SMALL
+  MEDIUM
+  LARGE
+}
+
+enum Energy {
+  VERY_LOW
+  LOW
+  MEDIUM
+  HIGH
+  VERY_HIGH
+}
+
+enum IndependencyLevel {
+  HIGH
+  MEDIUM
+  LOW
+}
+
+enum Age {
+  JUVENILE
+  ADULT
+  OLD
+}
+
+enum AmbientSpace {
+  SMALL
+  MEDIUM
+  BIG
 }

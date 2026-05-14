@@ -39,3 +39,15 @@ A API deve seguir um conjunto de funcionalidades e regras de negócio.
 [ ] Todos os filtros de características do pet, com exceção da cidade, são opcionais
 
 [ ] Para que uma ORG tenha acesso administrativo à aplicação, ela deve estar logada
+
+## Infos PETS
+
+- Org pertencente
+- Nome
+- Sobre
+- Energia
+- Tipo de ambiente preferível
+- Nível de dependência
+- Porte
+- Cidade
+- Requisitos pra adoção
