@@ -13,5 +13,6 @@ export interface Pet {
 
 export interface PetRepository {
     create(data: Prisma.PetCreateInput): Promise<Pet>
-    
+    findManyByQuery(params: { city: string, age?: Age, energy?: Energy, size?: Petsize, independency?: IndependencyLevel }): Promise <Pet[]>
+    findById(id: string): Promise <Pet|null>
 }

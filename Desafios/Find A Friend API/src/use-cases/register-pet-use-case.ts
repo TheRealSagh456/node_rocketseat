@@ -11,12 +11,12 @@ type RegisterPetRequest = {
     independency: IndependencyLevel
     ambient: AmbientSpace
     size: Petsize
-    requirements?: string[]
+    requirements?: string[] | undefined
 
     
 }
 
-export class PetRegisterUseCase {
+export class RegisterPetUseCase {
 
     constructor(private petRepository: PetRepository) {}
 

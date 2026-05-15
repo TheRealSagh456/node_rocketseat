@@ -1,5 +1,23 @@
+# dependencies
 node_modules
-# Keep environment variables out of version control
+
+# environment
 .env
 
-/src/generated/prisma
+# logs
+*.log
+npm-debug.log*
+
+# build
+dist
+
+# prisma sqlite local
+prisma/base.db
+prisma/base.db-journal
+
+# vscode
+.vscode
+
+# OS
+.DS_Store
+Thumbs.db
